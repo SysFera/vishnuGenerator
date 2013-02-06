@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DocBook Generator
+Bundle-SymbolicName: com.sysfera.codegen.docbook;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Vendor: SysFera
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.apache.commons.cli;bundle-version="1.0.0",
+ org.apache.commons.lang;bundle-version="2.1.0",
+ org.kermeta.docbook;bundle-version="1.1.0",
+ com.sysfera.codegen.api;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.sysfera.codegen.api/src"
+    modelPluginID="com.sysfera.codegen.api" modelName="Apimodel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>apimodel.ecore</foreignModel>
+  <genPackages prefix="Apimodel" basePackage="com.sysfera.codegen.api" disposableProviderFactory="true"
+      ecorePackage="apimodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="apimodel.ecore#//portDirection">
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//portDirection/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//portDirection/OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//portDirection/INOUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="apimodel.ecore#//APIUsage">
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//APIUsage/ALL"/>
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//APIUsage/API_ONLY"/>
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//APIUsage/CLI_ONLY"/>
+      <genEnumLiterals ecoreEnumLiteral="apimodel.ecore#//APIUsage/WS_ONLY"/>
+    </genEnums>
+    <genClasses ecoreClass="apimodel.ecore#//API">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//API/modules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//API/envVariableList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//API/jobEnvVariableList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//API/typeList"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//Module">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Module/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference apimodel.ecore#//Module/api"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//Module/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//Module/typeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//Module/resultCodeList"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Service/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Service/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference apimodel.ecore#//Service/module"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//Service/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Service/adminOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Service/isCommand"/>
+      <genFeatures createChild="false" propertyDescription="Specifies that this service is part of the programmatic API as a function"
+          ecoreFeature="ecore:EAttribute apimodel.ecore#//Service/isFunction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apimodel.ecore#//Service/resultCodes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apimodel.ecore#//Service/usedServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apimodel.ecore#//Service/usedByServices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//Service/details"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Service/useJobEnv"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference apimodel.ecore#//Port/service"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/usage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apimodel.ecore#//Port/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/optional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/shortOptionLetter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/longOptionName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apimodel.ecore#//Port/envOption"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Port/defaultValueLiteral"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//Port/details"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//EnvVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//EnvVariable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//EnvVariable/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//EnvVariable/isUserOption"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//EnvVariableList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//EnvVariableList/envVariables"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//JobEnvVariableList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//JobEnvVariableList/envVariables"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//ResultCode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//ResultCode/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//ResultCode/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//ResultCode/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//ResultCode/usage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//ResultCode/diagnostic"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//ResultCodeList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//ResultCodeList/resultCodes"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Type/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apimodel.ecore#//Type/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apimodel.ecore#//Type/ECoreType"/>
+    </genClasses>
+    <genClasses ecoreClass="apimodel.ecore#//TypeList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//TypeList/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apimodel.ecore#//TypeList/eTypes"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

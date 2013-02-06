@@ -1,0 +1,3 @@
+20/10/10 bisnard: download ecore file from INRIA gforge
+21/10/10 bisnard: added mixed attribute to EntryType and modified ExtendedMetaData kind -> mixed
+26/10/10 bisnard: removed NsPrefix and NsURI of package DocBook
