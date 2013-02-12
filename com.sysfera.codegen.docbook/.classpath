@@ -3,8 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="libs/astah-pro.jar"/>
-	<classpathentry kind="lib" path="libs/astah-api.jar"/>
+	<classpathentry kind="lib" path="libs/astah-community.jar"/>
 	<classpathentry kind="lib" path="libs/org.kermeta.docbook.jar"/>
 	<classpathentry kind="lib" path="/home/keo/Bureau/depot_git_eclipse/eclipse/com.sysfera.codegen.docbook/libs/org.eclipse.emf.ecore_2.6.1.v20100914-1218.jar" sourcepath="/home/traore/Eclipse/eclipse/plugins/org.eclipse.emf.ecore.source_2.6.1.v20100914-1218.jar">
 		<accessrules>
